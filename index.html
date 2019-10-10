@@ -31,7 +31,10 @@
         }
 
         shuffleBackward = () => {
-          console.log('Shuffle backward');
+          const { cardData } = this.state;
+          const lastIndex = cardData.length - 1;
+          const newCardData = [cardData.pop(), ...cardData.slice(0, lastIndex)];
+          this.setState({ cardData: newCardData });
         }
 
         shuffleForward = () => {
